@@ -298,3 +298,36 @@ LocalDateTime localDateTime2 = ldt.minusMinutes(3456);
 System.out.println("3456 分钟前 日期=" + dateTimeFormatter.format(localDateTime2));
 ```
 
+
+
+## 7. String类
+
+### 介绍
+
+​	String对象用于保存字符串，也就是一组字符序列。字符串常量对象是用双引号括起的字符序列。字符串的字符使用Unicode字符编码，一个字符占两个字节（不区分字母还是汉字）
+
+
+
+### 创建String对象的两种方式
+
+方式一：
+
+​	直接赋值 String s="zmm";
+
+方式二：
+
+​	调用构造器String s=new String("zmm");
+
+
+
+两者方式的区别：
+
+![image-20210821181847099](5-Java常用类.assets/image-20210821181847099.png)
+
+
+
+### String方法
+
+![image-20210822154808607](5-Java常用类.assets/image-20210822154808607.png)
+
+![image-20210822154821019](5-Java常用类.assets/image-20210822154821019.png)
