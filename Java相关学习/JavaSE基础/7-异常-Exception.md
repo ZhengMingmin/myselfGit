@@ -125,4 +125,4 @@ class AgeException extends RuntimeException {
 
 在位置中：throws用在方法声明处；throw用在方法体中
 
-通常throws后面跟则异常类型，throw后面跟着异常对象
+通常throws后面跟则异常类型，throw后面跟着异常对象；p

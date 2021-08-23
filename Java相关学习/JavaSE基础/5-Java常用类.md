@@ -207,6 +207,22 @@ System.out.println(time);//将得到一个到现在的总秒数
 
 如何转换将时间戳格式化成年月日 时分秒
 
+**SimpleDateFormat**
+
+•    可以对Date对象格式化后得到格式规定的字符串时间表示
+
+•    1）yyyy表示 年
+
+•    2）dd表示  日
+
+•    3）hh表示  时 HH代表24小时制，hh代表12小时制
+
+•    4）ss表示  秒
+
+•    5) MM代表月份，mm代表分钟
+
+
+
 ```java
 //通过format格式化一个时间戳
 SimpleDateFormat sf=new SimpleDateFormat("yyyy年MM月dd日 hh:mm:ss");
@@ -331,3 +347,138 @@ System.out.println("3456 分钟前 日期=" + dateTimeFormatter.format(localDate
 ![image-20210822154808607](5-Java常用类.assets/image-20210822154808607.png)
 
 ![image-20210822154821019](5-Java常用类.assets/image-20210822154821019.png)
+
+
+
+练习题
+
+从控制台输入字符串，判断是否满足邮箱格式，满足输出"输入正确"，如果不满足，输出“输入错误，请重新输入”
+
+xx@xx.com
+
+方案一：
+
+```java
+public class StringTest {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        while(true){
+            String str=scanner.next();
+            if(!str.endsWith(".com")){
+                System.out.println("输入错误，请重新输入");
+            }else if(str.startsWith("@")){
+                System.out.println("输入错误，请重新输入");
+            }else if(str.substring(str.indexOf("@"),str.indexOf(".")).equals("@")){
+                System.out.println("输入错误，请重新输入");
+            }else{
+                System.out.println("输入正确");
+                break;
+            }
+        }
+    }
+}
+```
+
+方案二：
+
+```java
+public class StringTest {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        while(true){
+            String str=scanner.next();
+            if(str.indexOf("@")>0  && str.indexOf("@")+1 <str.indexOf(".") && str.endsWith(".com")){
+                System.out.println("邮箱格式合法");
+                break;
+            }else{
+                System.out.println("输入错误，请重新输入");
+            }
+
+        }
+    }
+}
+```
+
+
+
+
+
+## 8.StringBuffer类
+
+### String和StringBuffer的区别
+
+String保存的是字符串**常量**，里面的值不能更改，每次String类的更新实际上就是更改地址，效率较低
+
+StringBuffer保存的是字符串**变量**，里面的值可以更改，每次StringBuffer的更新实际上可以更新内容，不用每次更新地址，效率较高
+
+
+
+### String和StringBuffer相互转换
+
+#### String ------>StringBuffer
+
+`String str`
+
+方式1  使用构造器
+
+`StringBuffer stringBuffer = new StringBuffer(str);`
+
+方式2 使用的是append方法
+
+```StringBuffer stringBuffer1 = new StringBuffer(); ```
+
+```stringBuffer1 = stringBuffer1.append(str)```
+
+
+
+#### StringBuffer ------>String
+
+```java
+StringBuffer stringBuffer3 = new StringBuffer("Java学习");
+//方式 1 使用 StringBuffer 提供的 toString 方法
+String s = stringBuffer3.toString();
+//方式 2: 使用构造器来搞定
+String s1 = new String(stringBuffer3);
+```
+
+
+
+### StringBuffer的相关方法
+
+增	append
+
+删	delete
+
+​	删除索引为>=start && <end 处的字符
+
+​	s.delete(11, 14)
+
+改 	replace
+
+插	 insert
+
+
+
+
+
+## StringBuilder
+
+### 基本介绍
+
+![image-20210822180315759](5-Java常用类.assets/image-20210822180315759.png)
+
+
+
+
+
+### String、StringBuffer 和 StringBuilder 的比较
+
+![image-20210822180412440](5-Java常用类.assets/image-20210822180412440.png)
+
+
+
+
+
+### String、StringBuffer 和 StringBuilder的选择
+
+![image-20210822180446541](5-Java常用类.assets/image-20210822180446541.png)
