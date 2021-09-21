@@ -74,7 +74,9 @@ work            是 Tomcat 工作时的目录，用来存放 Tomcat 运行时 js
 
 **关闭Tomcat服务器**
 
-**找到 Tomcat 的 bin 目录下的 shutdown.bat 双击，就可以停止 Tomcat 服务**
+1. 关闭tomcat服务器窗口或者将其设置为当前窗口然后快捷键ctrl+c
+
+2. **找到 Tomcat 的 bin 目录下的 shutdown.bat 双击，就可以停止 Tomcat 服务**
 
 
 
